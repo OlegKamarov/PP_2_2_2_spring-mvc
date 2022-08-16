@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:border="http://java.sun.com/xml/ns/persistence/orm">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список машин</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Модель</th>
+        <th>Цвет</th>
+        <th>Год выпуска</th>
+    </tr>
+    <tr th:each="thisCar : ${car}">
+        <td th:utext="${thisCar.getId()}">ID</td>
+        <td th:utext="${thisCar.getModel()}">Модель</td>
+        <td th:utext="${thisCar.getColor()}">Цвет</td>
+        <td th:utext="${thisCar.getYear()}">Год выпуска</td>
+    </tr>
+</table>
+<div>
+<!--    <th:block th:each="thisCar : ${car}">-->
+<!--        <h1 th:text="${thisCar}"></h1>-->
+<!--    </th:block>-->
+</div>
+</body>
+</html>
